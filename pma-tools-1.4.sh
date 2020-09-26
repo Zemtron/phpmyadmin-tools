@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-version="1.2"
+version="1.4"
 updates_on="1"
 if [ $updates_on -eq 1 ]; then
 curl $timeout --head https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/version.php | head -n 1 | grep "HTTP/1.[01] [2].." > /dev/$
@@ -56,7 +56,7 @@ sleep 1.0
    
 
     echo ""
-    Message "version 1.2"
+    Message "version 1.4"
     echo ""
     Message "#################################################################"
     echo ""

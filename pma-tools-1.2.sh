@@ -15,10 +15,14 @@ curl $timeout --head https://raw.githubusercontent.com/xElten/phpmyadmin-tools/m
 			wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/pma-tools-$sversion.sh
 			chmod +x pma-tools-$sversion.sh
 			rm pma-tools-$version.sh
-			./pma-tools-$sversion.sh $1		
-			clear
-			exit 0
+			./pma-tools-$sversion.sh $1
+			sleep 1
 			
+			read -n 1
+			clear
+			$0
+			exit 0
+			else printf "Skript auf neustem Stand"
 		fi
 	fi
 fi
