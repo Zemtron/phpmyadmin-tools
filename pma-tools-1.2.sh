@@ -12,7 +12,7 @@ curl $timeout --head https://raw.githubusercontent.com/xElten/phpmyadmin-tools/m
 		if [ $sversion \> $scriptversion ];
 			then printf "Neue Version verfügbar"
 			sleep 2
-			wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/pma-tools.sh -q -O pma-tools-$sversion.sh
+			wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/pma-tools-$sversion.sh
 			chmod +x pma-tools-$sversion.sh
 			rm pma-tools-$scriptversion.sh
 			./pma-tools-$sversion.sh $1
