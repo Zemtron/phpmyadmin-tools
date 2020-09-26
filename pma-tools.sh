@@ -6,7 +6,7 @@ updates="1"
 if [ $updates -eq 1 ]; then
 curl $timeout --head https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/version.php | head -n 1 | grep "HTTP/1.[01] [2].." > /dev/$
   	if [ $? = 1 ];
-	
+	then  printf ""
 	else
 			sversion=$(wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/version.php -q -O -)
 		if [ $sversion \> $scriptversion ];
