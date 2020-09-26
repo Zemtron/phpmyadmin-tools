@@ -1,28 +1,24 @@
 #!/bin/bash
 
 
-scriptversion="1.2"
-updates="1"
-if [ $updates -eq 1 ]; then
+version="1.2"
+updates_on="1"
+if [ $updates_on -eq 1 ]; then
 curl $timeout --head https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/version.php | head -n 1 | grep "HTTP/1.[01] [2].." > /dev/$
   	if [ $? = 1 ];
 	then  printf "-"
 	else
 			sversion=$(wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/version.php -q -O -)
-		if [ $sversion \> $scriptversion ];
+		if [ $sversion \> $version ];
 			then printf "Neue Version verfügbar"
 			sleep 2
 			wget https://raw.githubusercontent.com/xElten/phpmyadmin-tools/master/pma-tools-$sversion.sh
 			chmod +x pma-tools-$sversion.sh
-			rm pma-tools-$scriptversion.sh
-			./pma-tools-$sversion.sh $1
-			sleep 1
-			printf "taste"
-			read -n 1
+			rm pma-tools-$version.sh
+			./pma-tools-$sversion.sh $1		
 			clear
-			$0
 			exit 0
-			else printf "Skript auf neustem Stand"
+			
 		fi
 	fi
 fi
@@ -50,7 +46,7 @@ sleep 1.0
     figlet phpMyAdmin Tools | lolcat
     Message "#################################################################"
     
-    Message "Options 1.0.2"
+    Message "Options"
 
 
     echo ""
@@ -59,6 +55,8 @@ sleep 1.0
     Message "3.  phpMyAdmin | uninstall"
    
 
+    echo ""
+    Message "version 1.2"
     echo ""
     Message "#################################################################"
     echo ""
